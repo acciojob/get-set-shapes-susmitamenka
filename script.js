@@ -1,28 +1,36 @@
 //complete this code
 class Rectangle {
-	constructor(width,height){
-		this.width=width;
-		this.height=height;
-	}
-	getwidth(){
-		return this.width;
-	}
-	getheight(){
-		return this.height;
-	}
-	getArea(){
-		return this.width * this.height
-	}
-}
+  constructor(width, height) {
+    if (width <= 0 || height <= 0) {
+      throw new Error("Width and height must be positive integers.");
+    }
+    this.width = width;
+    this.height = height;
+  }
 
+  get width() {
+    return this.width;
+  }
+
+  get height() {
+    return this.height;
+  }
+
+  getArea() {
+    return this.width * this.height;
+  }
+}
 class Square extends Rectangle {
-	constructor(side,width,height){
-		super(width,height)
-		this.side
-	}
-	getPerimeter(){
-		return 4*this.width
-	}
+  constructor(side) {
+    if (side <= 0) {
+      throw new Error("Side must be a positive integer.");
+    }
+    super(side, side);
+  }
+
+  getPerimeter() {
+    return 4 * this.width;
+  }
 }
 
 // Do not change the code below this line
